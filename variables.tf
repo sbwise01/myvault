@@ -1,5 +1,5 @@
 variable "admin_users" {
-  type        = "list"
+  type        = list(string)
   description = "Typically the IAM user used to deploy the resources.  Must be an IAM user, can not be an IAM role."
   default     = ["brad"]
 }
@@ -11,7 +11,7 @@ variable "public_key" {
 
 variable "bastion_name" {
   description = "Used to make bastion instance different name than vault and consul instances"
-  default = "bradvault-bastion"
+  default     = "bradvault-bastion"
 }
 
 variable "consul_name" {
@@ -30,7 +30,7 @@ variable "tag_costcenter" {
 }
 
 variable "region" {
-  default = "us-west-2"
+  default     = "us-west-2"
   description = "The region to deploy the resources in"
 }
 
@@ -82,4 +82,6 @@ variable "bastion_iam_policy" {
   ]
 }
 EOF
+
 }
+

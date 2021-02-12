@@ -1,4 +1,5 @@
-data "aws_caller_identity" "current" {}
+data "aws_caller_identity" "current" {
+}
 
 data "external" "local" {
   program = ["bash", "./getip.sh"]
@@ -14,3 +15,4 @@ data "aws_ami" "centos" {
 
   owners = ["679593333241"]
 }
+
