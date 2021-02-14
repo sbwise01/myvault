@@ -8,7 +8,7 @@ module "vault_certificate" {
 }
 
 module "vault" {
-  source                   = "git@github.com:FoghornConsulting/m-vault?ref=brad.wise/terraform-12-upgrade"
+  source                   = "git@github.com:FoghornConsulting/m-vault?ref=v0.1.4"
   instance_subnet_ids      = [for subnet in module.aws_vpc.subnets["private"] : subnet.id]
   instance_security_groups = [module.aws_vpc.default_security_group.id, module.consul.sg_agent.id]
   admin_users              = var.admin_users
