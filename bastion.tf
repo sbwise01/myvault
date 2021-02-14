@@ -6,9 +6,7 @@ resource "aws_iam_policy" "bastion" {
 }
 
 module "bastion" {
-  #source = "git@github.com:FoghornConsulting/m-bastion?ref=v0.3.3"
-  source = "/Users/bwise/src/support-fog-modules/m-bastion"
-
+  source          = "git@github.com:FoghornConsulting/m-bastion?ref=v0.3.4"
   key_name        = aws_key_pair.main.key_name
   security_groups = [module.aws_vpc.default_security_group.id, module.consul.sg_agent.id]
   subnets         = [for subnet in module.aws_vpc.subnets["public"] : subnet.id]
