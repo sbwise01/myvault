@@ -41,9 +41,8 @@ resource "aws_route53_record" "vault" {
   zone_id         = aws_route53_zone.zone.id
 
   alias {
-    name                   = element(module.vault.lb_dns, 0)
-    zone_id                = element(module.vault.lb_zone, 0)
+    name                   = module.vault.load_balancer.0.dns_name
+    zone_id                = module.vault.load_balancer.0.zone_id
     evaluate_target_health = true
   }
 }
-
