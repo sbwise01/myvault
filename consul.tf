@@ -6,7 +6,7 @@ module "consul_certificate" {
 }
 
 module "consul" {
-  source                  = "git@github.com:FoghornConsulting/m-consul?ref=brad.wise/fix-switch-type-issue"
+  source                  = "git@github.com:FoghornConsulting/m-consul?ref=v0.1.5"
   subnet_ids              = [for subnet in module.aws_vpc.subnets["private"] : subnet.id]
   security_groups         = [module.aws_vpc.default_security_group.id]
   key_name                = aws_key_pair.main.key_name
