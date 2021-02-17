@@ -1,6 +1,6 @@
 resource "aws_acm_certificate" "cert" {
-  domain_name               = "${var.tag_name}.aws.bradandmarsha.com"
-  subject_alternative_names = ["*.${var.tag_name}.aws.bradandmarsha.com"]
+  domain_name               = "${var.tag_name}.superscalability.com"
+  subject_alternative_names = ["*.${var.tag_name}.superscalability.com"]
   validation_method         = "DNS"
 
   lifecycle {

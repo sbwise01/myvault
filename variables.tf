@@ -30,7 +30,7 @@ variable "tag_costcenter" {
 }
 
 variable "region" {
-  default     = "us-west-2"
+  default     = "us-east-1"
   description = "The region to deploy the resources in"
 }
 

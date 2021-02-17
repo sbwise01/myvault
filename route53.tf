@@ -1,10 +1,9 @@
-resource "aws_route53_zone" "parent_zone" {
-  name              = "aws.bradandmarsha.com"
-  delegation_set_id = "N03386422VXZJKGR4YO18"
+data "aws_route53_zone" "parent_zone" {
+  name         = "superscalability.com."
 }
 
 resource "aws_route53_zone" "zone" {
-  name = "${var.tag_name}.aws.bradandmarsha.com"
+  name = "${var.tag_name}.superscalability.com"
 }
 
 resource "aws_route53_record" "delegation" {
@@ -12,7 +11,7 @@ resource "aws_route53_record" "delegation" {
   name            = var.tag_name
   ttl             = 300
   type            = "NS"
-  zone_id         = aws_route53_zone.parent_zone.id
+  zone_id         = data.aws_route53_zone.parent_zone.id
   records         = aws_route53_zone.zone.name_servers
 }
 
