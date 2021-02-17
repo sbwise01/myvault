@@ -1,5 +1,5 @@
 module "consul_certificate" {
-  source            = "git@github.com:FoghornConsulting/m-self-signed-cert?ref=brad.wise/terraform-12-upgrade"
+  source            = "git@github.com:FoghornConsulting/m-self-signed-cert?ref=v0.1.1"
   organization_name = var.certificate_organization_name
   ca_common_name    = var.consul_ca_common_name
   ssc_common_name   = "${var.consul_ssl_host_name}.${var.consul_ca_common_name}"
